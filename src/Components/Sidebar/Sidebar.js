@@ -1,9 +1,13 @@
 import React from 'react';
 import * as styled from './Sidebar.styles';
 
-const Sidebar = () => {
+const Sidebar = (props) => {
+
+    
     return (
-        <styled.SidebarContainer>Sidebar</styled.SidebarContainer>
+        <styled.SidebarContainer>
+            <styled.SidebarHeader>{props.header}</styled.SidebarHeader>
+        </styled.SidebarContainer>
     )
 }
 

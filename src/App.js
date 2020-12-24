@@ -5,10 +5,16 @@ import Sidebar from './Components/Sidebar/Sidebar';
 import MainView from './Components/MainView/MainView';
 
 const App = () => {
+
+  const sidebarHeader = 'PSS';
+  const menuItems = ['Reporting Panel', 'Company', 'Accidents', 'Production', 'Setting']
+
   return (
     <styled.App>
-      <Sidebar></Sidebar>
-      <MainView></MainView>
+      <Sidebar 
+        header={sidebarHeader}
+      />
+      <MainView/>
     </styled.App>
   );
 }
