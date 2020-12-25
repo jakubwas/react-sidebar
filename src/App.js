@@ -7,12 +7,26 @@ import MainView from './Components/MainView/MainView';
 const App = () => {
 
   const sidebarHeader = 'PSS';
-  const menuItems = ['Reporting Panel', 'Company', 'Accidents', 'Production', 'Setting']
+
+  const menuItems = [
+    { name: 'Home', to: '/', icon: 'home', subMenuItems: [] },
+    { name: 'Reporting Panel', to: '/reportingpanel', icon: 'columns', subMenuItems: [] },
+    { name: 'Company', to: '/company', icon: 'building', 
+      subMenuItems: [
+        { name: 'Plants', to: '/plants' },
+        { name: 'Devices', to: '/devices' },
+        { name: 'Devices Groups', to: '/devicesgroups'}
+      ] },
+    { name: 'Accidents', to: '/accidents', icon: 'times', subMenuItems: [] },
+    { name: 'Production', to: '/production', icon: 'network-wired', subMenuItems: [] },
+    { name: 'Setting', to: '/settings', icon: 'cog', subMenuItems: [] }
+  ];
 
   return (
     <styled.App>
       <Sidebar 
         header={sidebarHeader}
+        menuItems={menuItems}
       />
       <MainView/>
     </styled.App>
