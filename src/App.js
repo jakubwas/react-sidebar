@@ -18,7 +18,7 @@ const App = () => {
         { name: 'Devices Groups', to: '/devicesgroups'}
       ] },
     { name: 'Accidents', to: '/accidents', icon: 'times', subMenuItems: [] },
-    { name: 'Production', to: '/production', icon: 'network-wired', subMenuItems: [] },
+    { name: 'Production', to: '/production', icon: 'building', subMenuItems: [] },
     { name: 'Setting', to: '/settings', icon: 'cog', subMenuItems: [] }
   ];
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import * as styled from './Sidebar.styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -8,8 +8,7 @@ import {
     faBuilding, 
     faExclamationTriangle, 
     faCog, 
-    faTimes, 
-    faNetworkWired
+    faTimes 
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -18,27 +17,45 @@ library.add(
     faBuilding, 
     faExclamationTriangle, 
     faCog, 
-    faTimes,
-    faNetworkWired
+    faTimes
     );
 
 const Sidebar = (props) => {
     
+    const [selected, setSelectedMenuItem] = useState(props.menuItems[0].name);
+    const [isSidebarOpen, setSidebarOpen] = useState(true);
+
+    const handleMenuItemClick = (name) => {
+        setSelectedMenuItem(name);
+    }
+
     const menuItemsJSX = props.menuItems.map((item, index)=> {
+
+        const isSelectedItem = selected === item.name;
+
         return (
-            <styled.MenuItem key={index}>
-                <styled.Icon src={item.icon}>
+            <styled.MenuItem 
+                key={index}
+                selected={selected}
+                selected={isSelectedItem}
+                isSidebarOpen={isSidebarOpen}
+                onClick={()=> {handleMenuItemClick(item.name)}}
+            >
+                <styled.Icon src={item.icon} isSidebarOpen={isSidebarOpen}>
                     <FontAwesomeIcon icon={item.icon} />
-                </styled.Icon>
-                <styled.Text>{item.name}</styled.Text>
+                </styled.Icon >
+                <styled.Text isSidebarOpen={isSidebarOpen}>{item.name}</styled.Text>
             </styled.MenuItem>
         )
     })
     
     return (
-        <styled.SidebarContainer>
+        <styled.SidebarContainer isSidebarOpen={isSidebarOpen}>
             <styled.SidebarHeader>{props.header}</styled.SidebarHeader>
             <styled.MenuItemsContainer>{menuItemsJSX}</styled.MenuItemsContainer>
+            <styled.TogglerContainer onClick={()=>{setSidebarOpen(!isSidebarOpen)}}>
+                <styled.Toggler/>
+            </styled.TogglerContainer>
         </styled.SidebarContainer>
     )
 }
