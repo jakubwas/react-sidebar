@@ -25,6 +25,20 @@ const Sidebar = (props) => {
     const [selected, setSelectedMenuItem] = useState(props.menuItems[0].name);
     const [isSidebarOpen, setSidebarOpen] = useState(true);
 
+    useEffect(() => {
+
+        const updateWindowResize = () => {
+            if (window.innerWidth < 1280 && isSidebarOpen) setSidebarOpen(false);
+            else setSidebarOpen(true);
+        }
+        
+        window.addEventListener('resize', updateWindowResize);
+
+        return () => {
+            window.removeEventListener('resize', updateWindowResize);
+        }
+    }, [] )
+
     const handleMenuItemClick = (name) => {
         setSelectedMenuItem(name);
     }
@@ -36,7 +50,6 @@ const Sidebar = (props) => {
         return (
             <styled.MenuItem 
                 key={index}
-                selected={selected}
                 selected={isSelectedItem}
                 isSidebarOpen={isSidebarOpen}
                 onClick={()=> {handleMenuItemClick(item.name)}}
