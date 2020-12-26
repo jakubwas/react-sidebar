@@ -19,7 +19,12 @@ const App = () => {
       ] },
     { name: 'Accidents', to: '/accidents', icon: 'times', subMenuItems: [] },
     { name: 'Production', to: '/production', icon: 'building', subMenuItems: [] },
-    { name: 'Setting', to: '/settings', icon: 'cog', subMenuItems: [] }
+    { name: 'Setting', to: '/settings', icon: 'cog', 
+    subMenuItems: [
+      { name: 'Users', to: '/plants' },
+      { name: 'Languages', to: '/devices' },
+      { name: 'Translation', to: '/devicesgroups'}
+    ]}
   ];
 
   return (

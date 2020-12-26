@@ -19,8 +19,13 @@ export const SidebarHeader = styled.h3`
     color: white;
 `
 
-export const MenuItemsContainer = styled.div`
+export const MenuItemsContainer = styled.div``
 
+export const ItemContainer = styled.div``
+
+export const SubMenuItemContainer = styled.div`
+    ${ props => props.isSidebarOpen && 'padding-left: 15%'};
+    ${ props => !props.isSidebarOpen && 'text-align: center'};
 `
 
 export const MenuItem = styled.div`
@@ -29,6 +34,8 @@ export const MenuItem = styled.div`
     color: ${ prop => prop.selected ? 'rgb(255, 255, 255)' : 'rgb(19, 15, 64)' };
     cursor: pointer;
     white-space: nowrap;
+    position: relative;
+    transition: .2s ease-in all;
 
     ${ props => !props.isSidebarOpen && `
         text-align: center;
@@ -47,7 +54,7 @@ export const MenuItem = styled.div`
         content: '';
         border-bottom: 2px solid 
             ${ prop => prop.selected ? 'rgb(255, 255, 255)' : 'rgba(19, 15, 64, 0.2)' };
-        display: block;
+        display: ${props => props.isOpen && props.isSidebarOpen && props.selected ? 'none' : 'block'};
         margin: 8px 0 4px;
     }
 
@@ -80,6 +87,16 @@ export const Icon = styled.div`
     `}
 `
 
+export const SubMenuItem = styled.p`
+    font-size: 13px;
+    color: rgb(19, 15, 64);
+    cursor: pointer;
+
+    &:hover {
+        color: rgb(255, 255, 255);
+    }
+`
+
 export const TogglerContainer = styled.div`
     position: absolute;
     width: 30%;
@@ -105,3 +122,15 @@ export const Toggler = styled.div`
         box-shadow: 0 .75em 0 0 rgb(255, 255, 255), 0 1.5em 0 0 rgb(255, 255, 255);
     }
 `
+
+export const DropdownIcon = styled.span`
+    position: absolute;
+    top: 30%;
+    right: 10px;
+    border: solid ${ prop => prop.selected ? 'rgb(255, 255, 255)' : 'rgba(19, 15, 64, 0.2)' };;
+    border-width: 0 1px 1px 0;
+    padding: 3px;
+    transform: ${props => props.isOpen ? 'rotate(-135deg)' : 'rotate(45deg)'};
+    transition: .3s ease-in all;
+`
+
