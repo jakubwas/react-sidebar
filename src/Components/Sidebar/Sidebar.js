@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import * as styled from './Sidebar.styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from "@fortawesome/fontawesome-svg-core";
+import { Link } from 'react-router-dom';
 import { 
     faHome,
     faColumns, 
@@ -65,8 +66,15 @@ const Sidebar = (props) => {
 
         if (subMenusStates.hasOwnProperty(index)) {
             subMenusCopy[index]['isOpen'] = !subMenusStates[index]['isOpen'];
-            setSubMenus(subMenusCopy);
+        } else {
+            for (let item in subMenusStates) {
+                subMenusCopy[item]['isOpen'] = false;
+                subMenusCopy[item]['selected'] = null;
+            }
         }
+
+        setSubMenus(subMenusCopy);
+
     }
 
     const menuItemsJSX = props.menuItems.map((item, index)=> {
@@ -85,28 +93,28 @@ const Sidebar = (props) => {
 
         return (
             <styled.ItemContainer key={index}>
-
-                <styled.MenuItem 
-                    selected={isSelectedItem}
-                    isSidebarOpen={isSidebarOpen}
-                    onClick={()=> {handleMenuItemClick(item.name, index)}}
-                    isOpen={isOpen}
-                >
-                    <styled.Icon src={item.icon} isSidebarOpen={isSidebarOpen}>
-                        <FontAwesomeIcon icon={item.icon} />
-                    </styled.Icon >
-                    <styled.Text isSidebarOpen={isSidebarOpen}>{item.name}</styled.Text>
-                    { hasSubmenus && isSidebarOpen && 
-                    ( <styled.DropdownIcon selected={isSelectedItem} isOpen={isOpen} /> )
-                    }
-                </styled.MenuItem>
-                
-                {hasSubmenus && isOpen && (
-                    <styled.SubMenuItemContainer isSidebarOpen={isSidebarOpen}>
-                        {subMenusJSX}
-                    </styled.SubMenuItemContainer>
-                )}
-                
+                <Link to={item.to}>
+                    <styled.MenuItem 
+                        selected={isSelectedItem}
+                        isSidebarOpen={isSidebarOpen}
+                        onClick={()=> {handleMenuItemClick(item.name, index)}}
+                        isOpen={isOpen}
+                    >
+                        <styled.Icon src={item.icon} isSidebarOpen={isSidebarOpen}>
+                            <FontAwesomeIcon icon={item.icon} />
+                        </styled.Icon >
+                        <styled.Text isSidebarOpen={isSidebarOpen}>{item.name}</styled.Text>
+                        { hasSubmenus && isSidebarOpen && 
+                        ( <styled.DropdownIcon selected={isSelectedItem} isOpen={isOpen} /> )
+                        }
+                    </styled.MenuItem>
+                    
+                    {hasSubmenus && isOpen && (
+                        <styled.SubMenuItemContainer isSidebarOpen={isSidebarOpen}>
+                            {subMenusJSX}
+                        </styled.SubMenuItemContainer>
+                    )}
+                </Link>
             </styled.ItemContainer>
 
         )

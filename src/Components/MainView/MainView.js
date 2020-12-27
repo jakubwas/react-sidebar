@@ -1,9 +1,12 @@
 import React from 'react';
 import * as styled from './MainView.styles';
+import Routes from '../../Routes'
 
 const MainView = () => {
     return (
-        <styled.MainViewContainer>Main View</styled.MainViewContainer>
+        <styled.MainViewContainer>
+            <Routes/>
+        </styled.MainViewContainer>
     )
 }
 
