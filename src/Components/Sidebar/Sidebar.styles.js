@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
 export const SidebarContainer = styled.div`
     width: ${ props => props.isSidebarOpen ? '20%' : '5%'};
