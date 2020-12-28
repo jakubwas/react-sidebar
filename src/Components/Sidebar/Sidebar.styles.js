@@ -5,7 +5,7 @@ export const SidebarContainer = styled.div`
     max-width: 280px;
     min-width: 80px;
     position: relative;
-    background-color: rgb(40, 21, 163) ;
+    background-color: rgb(9, 63, 110);
     transition: .2s ease-in all;
 `
 
@@ -42,8 +42,7 @@ export const SubMenuItemContainer = styled.div`
 
 export const MenuItem = styled.div`
     padding: 6px 20px;
-    font-weight: 600;
-    color: ${ prop => prop.selected ? 'rgb(255, 255, 255)' : 'rgb(19, 15, 64)' };
+    color: ${ prop => prop.selected ? 'rgb(255, 255, 255)' : 'rgba(255, 255, 255, 0.92)' };
     cursor: pointer;
     white-space: nowrap;
     position: relative;
@@ -81,7 +80,7 @@ export const MenuItem = styled.div`
 `
 
 export const Text = styled.p`
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     display: ${ props => props.isSidebarOpen ? 'inline-block' : 'none'};
 `
@@ -89,7 +88,7 @@ export const Text = styled.p`
 export const Icon = styled.div`
     width: 20px;
     height: 28px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.45);
     display: inline-block;
     text-align: center;
 
