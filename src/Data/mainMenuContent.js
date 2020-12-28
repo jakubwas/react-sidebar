@@ -42,6 +42,31 @@ export const mainMenuContent = [
         { name: 'Wastes production', to: '/wastes-production' }
       ]
     },
+    { name: 'Settings', to: '', icon: 'columns', 
+      subMenuItems: [
+        { name: 'Hosts', to: '/hosts' },
+        { name: 'Languages', to: '/languages' },
+        { name: 'Messages', to: '/messages' },
+        { name: 'Permissions', to: '/permissions' },
+        { name: 'Roles', to: '/roles' },
+        { name: 'Translations', to: '/translations' },
+        { name: 'Units', to: '/units' },
+        { name: 'Users', to: '/users' }
+      ]
+    },
+    { name: 'Reports', to: '', icon: 'columns', 
+    subMenuItems: [
+        { name: 'Shift reports', to: '/shift-reports' },
+        { name: 'Production', to: '/production' },
+        { name: 'Expenditure', to: '/expenditure' },
+        { name: 'Wastes', to: '/wastes' },
+        { name: 'Accidents', to: '/accidents' },
+        { name: 'Measurements', to: '/measurements' },
+        { name: 'Checkings', to: '/checkings' },
+        { name: 'Staff', to: '/staff' },
+        { name: 'Weight control', to: '/weight-control' }
+      ]
+    },
     { name: 'Measurements', to: '', icon: 'columns', 
       subMenuItems: [
         { name: 'Measurements list', to: '/measurements-list' },
@@ -54,19 +79,6 @@ export const mainMenuContent = [
         { name: 'Checkings sets', to: '/checkings-sets' }
       ]
     },
-    { name: 'Reports', to: '', icon: 'columns', 
-      subMenuItems: [
-        { name: 'Shift reports', to: '/shift-reports' },
-        { name: 'Production', to: '/production' },
-        { name: 'Expenditure', to: '/expenditure' },
-        { name: 'Wastes', to: '/wastes' },
-        { name: 'Accidents', to: '/accidents' },
-        { name: 'Measurements', to: '/measurements' },
-        { name: 'Checkings', to: '/checkings' },
-        { name: 'Staff', to: '/staff' },
-        { name: 'Weight control', to: '/weight-control' }
-      ]
-    },
     { name: 'Analysis', to: '', icon: 'columns', 
       subMenuItems: [
         { name: 'Analysis list', to: '/analysis-list' },
@@ -74,16 +86,5 @@ export const mainMenuContent = [
         { name: 'Analysis types', to: '/analysis-types' }
       ]
     },
-    { name: 'Settings', to: '', icon: 'columns', 
-      subMenuItems: [
-        { name: 'Hosts', to: '/hosts' },
-        { name: 'Languages', to: '/languages' },
-        { name: 'Messages', to: '/messages' },
-        { name: 'Permissions', to: '/permissions' },
-        { name: 'Roles', to: '/roles' },
-        { name: 'Translations', to: '/translations' },
-        { name: 'Units', to: '/units' },
-        { name: 'Users', to: '/users' }
-      ]
-    }
+    
   ];

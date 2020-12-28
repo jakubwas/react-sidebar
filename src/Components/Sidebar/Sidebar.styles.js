@@ -34,9 +34,9 @@ export const SubMenuItemContainer = styled.div`
     top: 0;
     right: 0;
     transform: translateX(100%);
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: rgb(255, 255, 255);
+    min-width: 190px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 `
 
@@ -100,9 +100,13 @@ export const Icon = styled.div`
 
 export const SubMenuItem = styled.p`
     color: black;
-    padding: 12px 16px;
-    text-decoration: none;
+    padding: 10px 16px;
     display: block;
+    font-size: 15px;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
 `
 
 export const TogglerContainer = styled.div`
@@ -135,10 +139,9 @@ export const DropdownIcon = styled.span`
     position: absolute;
     top: 30%;
     right: 10px;
-    border: solid ${ prop => prop.selected ? 'rgb(255, 255, 255)' : 'rgba(19, 15, 64, 0.2)' };;
+    border: solid rgba(255, 255, 255, 0.48);
     border-width: 0 2px 2px 0;
     padding: 3px;
     transform: rotate(-45deg);
     transition: .3s ease-in all;
 `
-
