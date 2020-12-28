@@ -109,8 +109,11 @@ const Sidebar = (props) => {
                         }
                     </styled.MenuItem>
                     
-                    {hasSubmenus && isOpen && (
-                        <styled.SubMenuItemContainer isSidebarOpen={isSidebarOpen}>
+                    {hasSubmenus && (
+                        <styled.SubMenuItemContainer
+                            isSidebarOpen={isSidebarOpen}
+                            className="subMenuItemContainer"    
+                        >
                             {subMenusJSX}
                         </styled.SubMenuItemContainer>
                     )}

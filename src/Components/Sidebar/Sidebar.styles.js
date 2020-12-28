@@ -5,9 +5,7 @@ export const SidebarContainer = styled.div`
     max-width: 280px;
     min-width: 80px;
     position: relative;
-    background-image: linear-gradient(
-        315deg, #90D5EC 0%, #FC575E 74%
-    );
+    background-color: rgb(40, 21, 163) ;
     transition: .2s ease-in all;
 `
 
@@ -21,11 +19,25 @@ export const SidebarHeader = styled.h3`
 
 export const MenuItemsContainer = styled.div``
 
-export const ItemContainer = styled.div``
+export const ItemContainer = styled.div`
+    position: relative;
+    &:hover {
+        .subMenuItemContainer{
+            display: block;
+        }
+    }
+`
 
 export const SubMenuItemContainer = styled.div`
-    ${ props => props.isSidebarOpen && 'padding-left: 15%'};
-    ${ props => !props.isSidebarOpen && 'text-align: center'};
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 `
 
 export const MenuItem = styled.div`
@@ -88,13 +100,10 @@ export const Icon = styled.div`
 `
 
 export const SubMenuItem = styled.p`
-    font-size: 13px;
-    color: rgb(19, 15, 64);
-    cursor: pointer;
-
-    &:hover {
-        color: rgb(255, 255, 255);
-    }
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 `
 
 export const TogglerContainer = styled.div`
@@ -128,9 +137,9 @@ export const DropdownIcon = styled.span`
     top: 30%;
     right: 10px;
     border: solid ${ prop => prop.selected ? 'rgb(255, 255, 255)' : 'rgba(19, 15, 64, 0.2)' };;
-    border-width: 0 1px 1px 0;
+    border-width: 0 2px 2px 0;
     padding: 3px;
-    transform: ${props => props.isOpen ? 'rotate(-135deg)' : 'rotate(45deg)'};
+    transform: rotate(-45deg);
     transition: .3s ease-in all;
 `
 
