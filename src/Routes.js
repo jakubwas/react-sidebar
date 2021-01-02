@@ -16,6 +16,7 @@ import { Production } from './Components/MainView/Production/Production';
 import { ProductionGroup } from './Components/MainView/Production/ProductionGroup';
 import { ProductionType } from './Components/MainView/Production/ProductionType';
 import { Recipes } from './Components/MainView/Production/Recipes';
+import { RecipesGroups } from './Components/MainView/Production/RecipesGroups';
 import { Accidents } from './Components/MainView/Accidents/AccidentsList';
 import { AccidentsGroups } from './Components/MainView/Accidents/AccidentsGroups';
 import { AccidentsTypes } from './Components/MainView/Accidents/AccidentsTypes';
@@ -27,7 +28,27 @@ import { MeasurementsList } from './Components/MainView/Measurements/Measurement
 import { MeasurementsSet } from './Components/MainView/Measurements/MeasurementsSet';
 import { CheckingsList } from './Components/MainView/Checkings/CheckingsList';
 import { CheckingsSet } from './Components/MainView/Checkings/CheckingsSet';
+import { AccidentsReports } from './Components/MainView/Reports/AccidentsReports';
+import { CheckingsReports } from './Components/MainView/Reports/CheckingsReports';
+import { ExpenditureReports } from './Components/MainView/Reports/ExpenditureReports';
+import { MeasurementsReports } from './Components/MainView/Reports/MeasurementsReports';
+import { ProductionReports } from './Components/MainView/Reports/ProductionReports';
+import { ShiftReports } from './Components/MainView/Reports/ShiftReports';
+import { StaffReports } from './Components/MainView/Reports/StaffReports';
+import { WastesReports } from './Components/MainView/Reports/WastesReports';
+import { WeightControlReports } from './Components/MainView/Reports/WeightControlReports';
+import { AnalysisList } from './Components/MainView/Analysis/AnalysisList';
+import { AnalysisGroups } from './Components/MainView/Analysis/AnalysisGroups';
+import { AnalysisTypes } from './Components/MainView/Analysis/AnalysisTypes';
 
+import { Hosts } from './Components/MainView/Settings/Hosts';
+import { Languages } from './Components/MainView/Settings/Languages';
+import { Messages } from './Components/MainView/Settings/Messages';
+import { Permissions } from './Components/MainView/Settings/Permissions';
+import { Roles } from './Components/MainView/Settings/Roles';
+import { Translations } from './Components/MainView/Settings/Translations';
+import { Units } from './Components/MainView/Settings/Units';
+import { Users } from './Components/MainView/Settings/Users';
 
 const Routes = () => {
     return(
@@ -69,7 +90,28 @@ const Routes = () => {
         <Route path='/checkings' component={CheckingsList}/>
         <Route path='/checkings-sets' component={CheckingsSet}/>
         {/* Reports */}
-        
+        <Route path='/reportedaccidents' component={AccidentsReports}/>
+        <Route path='/reportedcheckings' component={CheckingsReports}/>
+        <Route path='/reportedexpenditures' component={ExpenditureReports}/>
+        <Route path='/reportedmeasurements' component={MeasurementsReports}/>
+        <Route path='/reportedproducts' component={ProductionReports}/>
+        <Route path='/reports' component={ShiftReports}/>
+        <Route path='/reportedstaffs' component={StaffReports}/>
+        <Route path='/reportedwastes' component={WastesReports}/>
+        <Route path='/reportedweights' component={WeightControlReports}/>
+        {/* Analysis */}
+        <Route path='/analysis-reports-definitions' component={AnalysisList}/>
+        <Route path='/analysis-reports-groups' component={AnalysisGroups}/>
+        <Route path='/analysis-reports-types' component={AnalysisTypes}/>
+        {/* Settings */}
+        <Route path='/hosts' component={Hosts}/>
+        <Route path='/languages' component={Languages}/>
+        <Route path='/messages' component={Messages}/>
+        <Route path='/permissions' component={Permissions}/>
+        <Route path='/roles' component={Roles}/>
+        <Route path='/translations' component={Translations}/>
+        <Route path='/units' component={Units}/>
+        <Route path='/users' component={Users}/>
     </Switch>)
 }
 
