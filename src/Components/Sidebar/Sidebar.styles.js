@@ -1,90 +1,5 @@
 import styled from 'styled-components';
 
-export const SidebarContainer = styled.div`
-    width: ${ props => props.isSidebarOpen ? '20%' : '5%'};
-    max-width: 280px;
-    min-width: 80px;
-    position: relative;
-    background-color: rgb(9, 63, 110);
-    transition: .2s ease-in all;
-`
-
-export const SidebarHeader = styled.h3`
-    padding: 20px 0;
-    text-align: center;
-    margin-bottom: 10px;
-    letter-spacing: 6px;
-    color: white;
-`
-
-export const MenuItemsContainer = styled.div``
-
-export const ItemContainer = styled.div`
-    position: relative;
-    &:hover {
-        .subMenuItemContainer{
-            display: block;
-        }
-    }
-`
-
-export const SubMenuItemContainer = styled.div`
-    display: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translateX(100%);
-    background-color: rgb(255, 255, 255);
-    min-width: 190px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-`
-
-export const MenuItem = styled.div`
-    padding: 6px 20px;
-    color: ${ prop => prop.selected ? 'rgb(255, 255, 255)' : 'rgba(255, 255, 255, 0.92)' };
-    cursor: pointer;
-    white-space: nowrap;
-    position: relative;
-    transition: .2s ease-in all;
-
-    ${ props => !props.isSidebarOpen && `
-        text-align: center;
-        margin: auto;
-        ${ props.selected && `
-            background-color: rgba(0, 0, 0, 0.5);
-        `}
-    `}
-    
-    &:hover {
-        color: rgb(255, 255, 255);
-        transition: 0.1s ease-in all;
-    }
-
-    &:after{
-        content: '';
-        border-bottom: 2px solid 
-            ${ prop => prop.selected ? 'rgb(255, 255, 255)' : 'rgba(19, 15, 64, 0.2)' };
-        display: ${props => props.isOpen && props.isSidebarOpen && props.selected ? 'none' : 'block'};
-        margin: 8px 0 4px;
-    }
-
-    ${props => !props.selected && `
-        &:hover {
-            &:after {
-                border-color: rgba(255, 255, 255, 0.2);
-                transition: 0.1s ease-in all;
-            }
-        }
-    `};
-`
-
-export const Text = styled.p`
-    font-size: 14px;
-    font-weight: 500;
-    display: ${ props => props.isSidebarOpen ? 'inline-block' : 'none'};
-`
-
 export const Icon = styled.div`
     width: 20px;
     height: 28px;
@@ -96,17 +11,6 @@ export const Icon = styled.div`
         padding-right: 25px;
         transition: .2s ease-in padding-right;
     `}
-`
-
-export const SubMenuItem = styled.p`
-    color: black;
-    padding: 10px 16px;
-    display: block;
-    font-size: 15px;
-
-    &:hover {
-        background-color: rgba(0, 0, 0, 0.1);
-    }
 `
 
 export const TogglerContainer = styled.div`
@@ -135,6 +39,118 @@ export const Toggler = styled.div`
     }
 `
 
+export const SidebarContainer = styled.div`
+    width: ${props => props.isSidebarOpen ? '275px' : '85px'};
+    transition: width ease-in .2s;
+    background-color:rgb(9, 63, 110);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100vh;
+
+    .link-decoration {
+        text-decoration: none;
+    }
+`;
+
+export const MenuItemContainer = styled.div`
+    padding-top: 110px;
+`;
+
+export const MenuItem = styled.div`
+    cursor: pointer;
+    white-space: nowrap;
+    position: relative;
+    transition: .2s ease-in all;
+    padding: 6px 20px;
+
+    ${ props => !props.isSidebarOpen && props.isSelected && (`
+            background-color: rgba(0, 0, 0, 0.5);
+    `)};
+
+    .mdc-list-item__graphic {
+        margin: 0;
+        ${ props => props.isSidebarOpen && `
+            padding-right: 25px;
+            transition: .2s ease-in padding-right;
+        `}
+    }
+
+    &:after{
+        content: '';
+        border-bottom: 2px solid 
+            ${props => props.isSelected ? 'rgba(255, 255, 255, 0.75)' : 'rgba(19, 15, 64, 0.2)'};
+        display: block;
+        margin: 8px 0 4px;
+    }
+    
+    &:hover {
+        &:after {
+            ${props => !props.isSelected && `
+                border-color: rgba(255, 255, 255, 0.2);
+                transition: 0.1s ease-in all;
+            `}
+        }
+    }
+`;
+
+export const MenuItemInner = styled.div`
+    text-decoration: none;
+    padding-left: 9px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+`;
+
+export const ItemContainer = styled.div`
+    position: relative;
+    &:hover {
+        .subMenuItemContainer{
+            display: block;
+        }
+    }
+`;
+
+export const SubMenuItem = styled.div`
+    color: rgb(71, 67, 67);
+    padding: 12px 16px;
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+`;
+
+export const SubMenuItemContainer = styled.div`
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    background-color: rgb(255, 255, 255);
+    min-width: 190px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 9999 !important;
+`;
+
+export const SubMenuTitle = styled.div`
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 12px;
+    background-color: rgb(9, 63, 110);
+`;
+
+export const TextToggle = styled.div`
+    display: ${props => props.isSidebarOpen ? 'block' : 'none'};
+    color: rgb(255, 255, 255);
+`;
+
 export const DropdownIcon = styled.span`
     position: absolute;
     top: 30%;
@@ -144,4 +160,4 @@ export const DropdownIcon = styled.span`
     padding: 3px;
     transform: rotate(-45deg);
     transition: .3s ease-in all;
-`
+`;

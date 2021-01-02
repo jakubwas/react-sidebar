@@ -3,18 +3,16 @@ import * as styled from './App.styles';
 // Components
 import Sidebar from './Components/Sidebar/Sidebar';
 import MainView from './Components/MainView/MainView';
-// Data
-import { mainMenuContent } from './Data/mainMenuContent'
 
 const App = () => {
 
-  const sidebarHeader = 'PSS';
+  const [isSidebarOpen, setSidebarState] = React.useState(true);
 
   return (
     <styled.App>
       <Sidebar 
-        header={sidebarHeader}
-        menuItems={mainMenuContent}
+        isSidebarOpen={isSidebarOpen}
+        setSidebarState={setSidebarState}
       />
       <MainView/>
     </styled.App>
