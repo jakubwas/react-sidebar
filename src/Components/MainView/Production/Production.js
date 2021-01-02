@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const Production = () => {
+export const Production = () => {
     return (
         <div>
             <h1>Welcome to Production Page</h1>
         </div>
     )
 }
-
-export default Production
