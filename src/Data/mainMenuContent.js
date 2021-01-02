@@ -1,250 +1,239 @@
 export const mainMenuContent = [
   {
-    label: 'reporting.panel',
+    label: 'Reporting Panel',
     url: '/',
-    icon: 'developer_board',
   },
   {
-    label: 'analysis.panel',
+    label: 'Analysis Panel',
     url: '/analysis-panel',
-    icon: 'insert_chart_outlined',
   },
   {
-    label: 'company',
+    label: 'Company',
     icon: 'business',
     items: [
       {
-        label: 'plants',
+        label: 'Plants',
         url: '/plants',
       },
       {
-        label: 'production.lines',
+        label: 'Production Lines',
         url: '/lines',
       },
       {
-        label: 'devices',
+        label: 'Devices',
         url: '/devices',
       },
       {
-        label: 'devices.groups',
+        label: 'Devices Groups',
         url: '/devices-groups',
       },
       {
-        label: 'teams',
+        label: 'Teams',
         url: '/teams',
       },
       {
-        label: 'shifts',
+        label: 'Shifts',
         url: '/shifts',
       },
       {
-        label: 'employees',
+        label: 'Employees',
         url: '/employees',
       }
     ]
   },
   {
-    label: 'products',
-    icon: 'layers',
+    label: 'Products',
     items: [
       {
-        label: 'products.list',
+        label: 'Products List',
         url: '/products',
       },
       {
-        label: 'products.groups',
+        label: 'Products Groups',
         url: '/products-groups',
       },
     ]
   },
   {
-    label: 'production',
-    icon: 'build',
+    label: 'Production',
     items: [
       {
-        label: 'recipes',
+        label: 'Recipes',
         url: '/recipes',
       },
       {
-        label: 'recipes.groups',
+        label: 'Recipes Groups',
         url: '/recipes-groups',
       },
       {
-        label: 'production',
+        label: 'Production',
         url: '/productexecution',
       },
       {
-        label: 'production.group',
+        label: 'Production Group',
         url: '/productexecutiongroup',
       },
       {
-        label: 'production.type',
+        label: 'Production Type',
         url: '/productexecutiontype',
       }
     ]
   },
   {
-    label: 'accidents',
-    icon: 'warning',
+    label: 'Accidents',
     items: [
       {
-        label: 'accidents.list',
+        label: 'Accidents List',
         url: '/accidents',
       },
       {
-        label: 'accidents.groups',
+        label: 'Accidents Groups',
         url: '/accidents-groups',
       },
       {
-        label: 'accidents.types',
+        label: 'Accidents Types',
         url: '/accidents-types',
       }
     ]
   },
   {
-    label: 'wastes',
-    icon: 'delete',
+    label: 'Wastes',
     items: [
       {
-        label: 'wastes.list',
+        label: 'Wastes List',
         url: '/wastes',
       },
       {
-        label: 'wastes.groups',
+        label: 'Wastes Groups',
         url: '/wastes-groups',
       },
       {
-        label: 'wastes.types',
+        label: 'Wastes Types',
         url: '/wastes-types',
       },
       {
-        label: 'wastes.executions',
+        label: 'Wastes Executions',
         url: '/wastes-execution',
       }
     ]
   },
   {
-    label: 'measurements',
-    icon: 'network_check',
+    label: 'Measurements',
     items: [
       {
-        label: 'measurements.list',
+        label: 'Measurements List',
         url: '/measurements',
       },
       {
-        label: 'measurements.set',
+        label: 'Measurements Set',
         url: '/measurementsets',
       }
     ]
   },
   {
-    label: 'checkings',
-    icon: 'playlist_add_check',
+    label: 'Checkings',
     items: [
       {
-        label: 'checkings.list',
+        label: 'Checkings List',
         url: '/checkings',
       },
       {
-        label: 'checkings.sets',
+        label: 'Checkings Sets',
         url: '/checkings-sets',
       }
     ]
   },
   {
-    label: 'reports',
-    icon: 'assignment',
+    label: 'Reports',
     items: [
       {
-        label: 'shift.reports',
+        label: 'Shift Reports',
         url: '/reports',
       },
       {
-        label: 'production',
+        label: 'Production',
         url: '/reportedproducts',
       },
       {
-        label: 'expenditure',
+        label: 'Expenditure',
         url: '/reportedexpenditures',
       },
       {
-        label: 'wastes',
+        label: 'Wastes',
         url: '/reportedwastes',
       },
       {
-        label: 'accidents',
+        label: 'Accidents',
         url: '/reportedaccidents',
       },
       {
-        label: 'measurements',
+        label: 'Measurements',
         url: '/reportedmeasurements',
       },
       {
-        label: 'checkings',
+        label: 'Checkings',
         url: '/reportedcheckings',
       },
       {
-        label: 'staff',
+        label: 'Staff',
         url: '/reportedstaffs',
       },
       {
-        label: 'weight.control',
+        label: 'Weight Control',
         url: '/reportedweights',
       }
     ]
   },
   {
-    label: 'analysis',
-    icon: 'equalizer',
+    label: 'Analysis',
     items: [
       {
-        label: 'analysis.list',
+        label: 'Analysis List',
         url: '/analysis-reports-definitions',
       },
       {
-        label: 'analysis.groups',
+        label: 'Analysis Groups',
         url: '/analysis-reports-groups',
       },
       {
-        label: 'analysis.types',
+        label: 'Analysis Types',
         url: '/analysis-reports-types',
       },
     ]
   },
   {
-    label: 'settings',
-    icon: 'settings',
+    label: 'Settings',
     items: [
       {
-        label: 'users',
+        label: 'Users',
         url: '/users',
       },
       {
-        label: 'roles',
+        label: 'Roles',
         url: '/roles',
       },
       {
-        label: 'permissions',
+        label: 'Permissions',
         url: '/permissions',
       },
       {
-        label: 'languages',
+        label: 'Languages',
         url: '/languages',
       },
       {
-        label: 'translations',
+        label: 'Translations',
         url: '/translations',
       },
       {
-        label: 'messages',
+        label: 'Messages',
         url: '/messages',
       },
       {
-        label: 'units',
+        label: 'Units',
         url: '/units',
       },
       {
-        label: 'hosts',
+        label: 'Hosts',
         url: '/hosts',
       }
     ]
