@@ -2,9 +2,9 @@ import React from 'react';
 import * as styled from './MainView.styles';
 import Routes from '../../Routes'
 
-const MainView = () => {
+const MainView = (props) => {
     return (
-        <styled.MainViewContainer>
+        <styled.MainViewContainer isSidebarOpen={props.isSidebarOpen}>
             <Routes/>
         </styled.MainViewContainer>
     )

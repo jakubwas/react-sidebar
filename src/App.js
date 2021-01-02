@@ -14,7 +14,7 @@ const App = () => {
         isSidebarOpen={isSidebarOpen}
         setSidebarState={setSidebarState}
       />
-      <MainView/>
+      <MainView isSidebarOpen={isSidebarOpen}/>
     </styled.App>
   );
 }
